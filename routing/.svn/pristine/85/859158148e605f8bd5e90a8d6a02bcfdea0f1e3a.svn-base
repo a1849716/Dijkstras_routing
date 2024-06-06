@@ -1,0 +1,2 @@
+main: Dijkstra.cpp
+	g++ -o main Dijkstra.cpp

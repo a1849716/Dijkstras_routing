@@ -1,0 +1,62 @@
+#include "node.h"
+using namespace std;
+
+/*
+At each node x:
+INITIALISATION:
+N’ = {u} 
+for all nodes v 
+    if v is a neighbor of u
+        then D(v) = c(u,v) 
+    else D(v) = ∞ 
+
+LOOP
+find w not in N' such that D(w) is a minimum
+add w to N’ 
+update D(v) for each neighbor v of w and not in N':
+    D(v) = min(D(v), D(w) + c(w,v)) 
+    new cost to v is either old cost to v or known least path cost to w plus cost from w to v
+    until N' = N
+*/
+
+vector<node> dijkstra(node starting, vector<string> all_nodes, int node_num){
+  all_nodes.push_back(starting.name);
+  //creates the N’ array storing the order
+  vector<node> final;
+  final.push_back(starting);
+  unordered_map<string, int> cost_arr;
+  //initialising
+  for(int i = 0; i < node_num; i++){
+    std::string curr_node = all_nodes[i];
+    if((starting.neighbour_nodes).find(curr_node) != starting.neighbour_nodes.end()){
+      cost_arr[curr_node] = starting.neighbour_nodes[curr_node];
+    }
+    else{
+      cost_arr[curr_node] = INT_MAX;
+    }
+  } 
+
+  //create a vector of vector names that can be removed as the min is found and remove the starting node as its already in the final node
+  vector<string> remaining_nodes = all_nodes;
+  remaining_nodes = remove_element(remaining_nodes, starting.name);
+
+  //for loop after initiation
+  for(int i = 0; i < node_num-1; i++){
+    int min_weight = INT_MAX;
+    for(int j = 0; j > remaining_nodes.size(); j++){
+      //find w not in N' such that D(w) is a minimum
+      if()
+      //add w to N’ 
+
+      //update D(v) for each neighbor v of w and not in N':
+      //D(v) = min(D(v), D(w) + c(w,v)) 
+    }
+  }
+
+  return final;
+};
+
+int main(){
+  process_input();
+  return 0;
+}

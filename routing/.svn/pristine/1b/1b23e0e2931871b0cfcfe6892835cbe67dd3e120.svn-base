@@ -1,0 +1,9 @@
+#include <vector>
+#include "node.h"
+
+class node{
+  public:
+    vector<node*> neighbour_node;
+    int val;
+    int cost;
+};

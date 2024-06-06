@@ -1,0 +1,88 @@
+#include <iostream>
+#include <vector>
+#include<string>
+#include "node.cpp"
+using namespace std; 
+
+void process_input(){
+  string temp;
+  cin >> temp;
+  while(temp != "END"){
+    //do something
+  }
+};
+
+vector<int> dijkstra(node starting_node){
+
+};
+
+/*
+prints out neighbour table for node x 
+expected output: 
+  X Neighbour Table:
+  Y|5
+  Z|1
+*/
+void neighbour_table(node x){
+
+}
+
+/*
+prints out LSDB table for node x 
+expected output:
+
+*/
+void lsdb_table(node x){
+
+}
+
+/*
+prints out routing table for node x 
+expected output:
+
+*/
+void routing_table(node x){
+
+}
+
+
+/*
+returns the closes path from start to end
+*/
+vector<node> closes_path(node start, node end){
+
+};
+
+/*
+list of all neibouring nodes, runs neighbour_table() function at the end
+*/
+vector<node> closest_nodes(node){
+
+};
+
+int main(){
+  vector<int> known, prev, dist, nodes_all;
+  int input;
+
+  cin >> input;
+  nodes_all.push_back(input);
+
+}
+/*
+At each node x:
+
+INITIALISATION:
+N’ = {u} 
+for all nodes v 
+    if v is a neighbor of u
+        then D(v) = c(u,v) 
+    else D(v) = ∞ 
+
+LOOP
+find w not in N' such that D(w) is a minimum
+add w to N’ 
+update D(v) for each neighbor v of w and not in N':
+    D(v) = min(D(v), D(w) + c(w,v)) 
+    /* new cost to v is either old cost to v or known least path cost to w plus cost from w to v
+until N' = N
+*/
